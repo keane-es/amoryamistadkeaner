@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Portal Random TikTok</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: black;
+      color: #0f0;
+      font-family: monospace;
+      font-size: 2em;
+    }
+  </style>
+</head>
+<body>
+  <h1>Tocando tu destino...</h1>
+
+  <script>
+    const videos = [
+      "https://www.tiktok.com/@keane_es/video/7606617811368070421",
+      "https://www.tiktok.com/@keane_es/video/7587111199066639624",
+      "https://www.tiktok.com/@keane_es/video/7559319065987157256",
+      "https://www.tiktok.com/@keane_es/video/7548940048205368594",
+      "https://www.tiktok.com/@keane_es/video/7518105869523930376",
+      "https://www.tiktok.com/@keane_es/video/7472851133409594679",
+      "https://www.tiktok.com/@keane_es/video/7403407557785734405",
+      "https://www.tiktok.com/@keane_es/video/7394956299060137221",
+      "https://www.tiktok.com/@keane_es/video/7606785336131292436"
+    ];
+
+    // Evitar repetir el mismo video consecutivo
+    let last = localStorage.getItem('lastVideo');
+    let random;
+    do {
+      random = Math.floor(Math.random() * videos.length);
+    } while (videos[random] === last);
+
+    localStorage.setItem('lastVideo', videos[random]);
+
+    // Pantalla previa de 2 segundos
+    setTimeout(() => {
+      window.location.href = videos[random];
+    }, 2000);
+  </script>
+</body>
+</html>
