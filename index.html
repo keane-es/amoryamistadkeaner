@@ -2,23 +2,9 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Portal Random TikTok</title>
-  <style>
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      background: black;
-      color: #0f0;
-      font-family: monospace;
-      font-size: 2em;
-    }
-  </style>
+  <title>Random Keane TikTok</title>
 </head>
 <body>
-  <h1>Tocando tu destino...</h1>
-
   <script>
     const videos = [
       "https://www.tiktok.com/@keane_es/video/7606617811368070421",
@@ -41,10 +27,8 @@
 
     localStorage.setItem('lastVideo', videos[random]);
 
-    // Pantalla previa de 2 segundos
-    setTimeout(() => {
-      window.location.href = videos[random];
-    }, 2000);
+    // Redirección inmediata al video random
+    window.location.href = videos[random];
   </script>
 </body>
 </html>
